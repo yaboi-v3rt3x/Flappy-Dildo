@@ -3,7 +3,7 @@ Flappy Dildo is a shitty recreation of Flappy Bird I made for fun using Godot En
 
 # Credits
 Background Music - Anirudh Ravichander (https://www.youtube.com/watch?v=_knjUoFgvnM)<br>
-Flap Sound #1 - https://www.youtube.com/watch?v=7KM1rCtbV-w<br>
+Flap Sound #1 - https://www.youtube.com/watch?v=7KM1rCtbV-w (For some reason it just sounds like a click but whatever)<br>
 Flap Sound #2 - https://pixabay.com/sound-effects/mac-n-cheese-being-stirred-71322/<br>
 Flap Sound #3 - https://quicksounds.com/sound/15841/moans-and-groans
 
