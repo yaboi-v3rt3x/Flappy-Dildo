@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://ndbd5uanla23"]
+
+[ext_resource type="Script" uid="uid://bqu334u61gphb" path="res://pipes.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://do7stk8goij8j" path="res://background.png" id="1_lquwl"]
+[ext_resource type="AudioStream" uid="uid://dh513hja4x36e" path="res://background_music.mp3" id="2_7mycd"]
+[ext_resource type="Script" uid="uid://c5d1fuywyb1bd" path="res://gamemanager.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://hwokp1twg1ef" path="res://pipe.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://coyjbscuh5x2c" path="res://player.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(1.91489, 3.38624)
+texture = ExtResource("1_lquwl")
+centered = false
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Background"]
+stream = ExtResource("2_7mycd")
+parameters/looping = true
+
+[node name="Pipes" type="Node2D" parent="."]
+script = ExtResource("1_0xm2m")
+PipeScene = ExtResource("2_lquwl")
+
+[node name="GameOverUI" type="CanvasLayer" parent="."]
+
+[node name="GameOverLabel" type="Label" parent="GameOverUI"]
+offset_left = 310.0
+offset_top = 902.5
+offset_right = 402.0
+offset_bottom = 925.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+text = "Game Over!"
+
+[node name="RetryButton" type="Button" parent="GameOverUI"]
+offset_left = 285.0
+offset_top = 1202.5
+offset_right = 387.0
+offset_bottom = 1233.5
+scale = Vector2(5, 5)
+text = "Tap to Retry"
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_h2yge")
+
+[node name="Player" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HighScoreLabel" type="Label" parent="UI"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 86.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+text = "High Score: 0"
+
+[node name="ClickToStartLabel" type="Label" parent="UI"]
+offset_left = 397.5
+offset_top = 837.5
+offset_right = 454.5
+offset_bottom = 886.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+text = "Tap to
+Start!"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 25.0
+offset_top = 150.0
+offset_right = 86.0
+offset_bottom = 173.0
+scale = Vector2(5, 5)
+text = "Score: 0"
+
+[node name="MusicLabel" type="Label" parent="UI"]
+offset_left = 825.0
+offset_top = 25.0
+offset_right = 871.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+text = "Music"
+
+[node name="MusicToggle" type="CheckButton" parent="UI/MusicLabel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 45.0
+offset_bottom = 49.0
+button_pressed = true
+
+[connection signal="pressed" from="GameOverUI/RetryButton" to="GameManager" method="_on_retry_button_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://coyjbscuh5x2c"]
+
+[ext_resource type="Script" uid="uid://cftbbhu00wrs7" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dgyb3twvgkmg6" path="res://Sprite2D.png" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
+radius = 124.0
+height = 510.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(200, 960)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CapsuleShape2D_hqtel")
+
+[node name="FlapSound" type="AudioStreamPlayer2D" parent="."]
