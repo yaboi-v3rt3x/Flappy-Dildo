@@ -1,5 +1,5 @@
 # Flappy Dildo
-Flappy Dildo is a shitty recreation of Flappy Bird I made for fun. The idea of the player being a dildo avoiding dicks as well as the flapping sounds where my friends idea. This little fun project took about 12 hours to complete with all the issues I ran along the way as well as the long download times for Android Studio and shit so I could export it to a APK for mobile playing.
+Flappy Dildo is a shitty recreation of Flappy Bird I made for fun using Godot Engine with help from ChatGPT. The idea of the player being a dildo avoiding dicks as well as the flapping sounds where my friends idea. This little fun project took about 12 hours to complete with all the issues I ran into along the way as well as the long download times for Android Studio and shit so I could export it to a APK for mobile playing.
 
 # Credits
 Background Music - Anirudh Ravichander (https://www.youtube.com/watch?v=_knjUoFgvnM)<br>
